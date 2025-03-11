@@ -1,20 +1,21 @@
-
 name: first
 on: push
-jobs: 
-    job1:
-        name: First job
-        runs-on: ubuntu-latest
-        steps:
-        - name: Step one
-          uses: actions/checkout@v2
-        - name: Step two
-          run: env | sort
-    Job2:
-        name: Second job
-        runs-on: windows-latest
-        steps:
-        - name: Step one
-        - name: step two
-          run: "Get-ChildItem Env: | Sort-Object Name"
+jobs:
+  job1:
+    name: First job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step one
+        uses: actions/checkout@v2
+      - name: Step two
+        run: env | sort
+
+  job2:  # Correction de "Job2" à "job2" pour respecter la casse
+    name: Second job
+    runs-on: windows-latest
+    steps:
+      - name: Step one
+        run: echo "Step one executed"  # Ajout d'une commande pour cette étape
+      - name: Step two
+        run: "Get-ChildItem Env: | Sort-Object Name"
 
